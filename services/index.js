@@ -43,5 +43,5 @@ export const getPost = async () => {
 
   const result = await request(graphqlAPI, query);
 
-  return result.postConnection.edges;
+  return result.postsConnection.edges;
 };

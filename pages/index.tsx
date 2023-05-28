@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { PostCard, Categories, PostWidget } from "../components";
-import { getPosts } from "../services";
+import { getPost } from "../services";
 
 // const posts = [
 //   { title: "React Testing", excerpt: "Learn React Testing" },
@@ -32,8 +32,8 @@ export default function Home({ posts }) {
   );
 }
 
-export async function getStaticPropts() {
-  const posts = (await getPosts()) || [];
+export async function getStaticProps() {
+  const posts = (await getPost()) || [];
 
   return {
     props: { posts },
